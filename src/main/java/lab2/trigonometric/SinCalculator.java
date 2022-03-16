@@ -14,16 +14,12 @@ public class SinCalculator extends Calculator {
 
         do {
             prev = sum;
-            sum += minusOnePow(i) * prod(x, 2 * i + 1);
+            sum += Math.pow(-1, i) * prod(x, 2 * i + 1);
 
             ++i;
         } while (getAccuracy() <= Math.abs(prev - sum));
 
         return sum;
-    }
-
-    private static int minusOnePow(int n) {
-        return 1 - (n % 2) * 2;
     }
 
     private static double prod(double x, int n) {
