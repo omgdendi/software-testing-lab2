@@ -40,4 +40,70 @@ public class TrigonomMock {
 
         return sin;
     }
+
+    public static CosCalculator getCosMock() {
+        CosCalculator cos = mock(CosCalculator.class);
+
+        when(cos.calculate(Mockito.eq(1 * PI / 6))).thenReturn(0.8660254037844387);
+        when(cos.calculate(Mockito.eq(1 * PI / 4))).thenReturn(0.7071067811865476);
+        when(cos.calculate(Mockito.eq(1 * PI / 3))).thenReturn(0.5000000000000001);
+        when(cos.calculate(Mockito.eq(2 * PI / 3))).thenReturn(-0.4999999999999998);
+        when(cos.calculate(Mockito.eq(3 * PI / 4))).thenReturn(-0.7071067811865475);
+        when(cos.calculate(Mockito.eq(5 * PI / 6))).thenReturn(-0.8660254037844387);
+        when(cos.calculate(Mockito.eq(7 * PI / 6))).thenReturn(-0.8660254037844388);
+        when(cos.calculate(Mockito.eq(5 * PI / 4))).thenReturn(-0.7071067811865477);
+        when(cos.calculate(Mockito.eq(4 * PI / 3))).thenReturn(-0.5000000000000004);
+        when(cos.calculate(Mockito.eq(5 * PI / 3))).thenReturn(0.5000000000000001);
+        when(cos.calculate(Mockito.eq(7 * PI / 4))).thenReturn(0.7071067811865474);
+        when(cos.calculate(Mockito.eq(11 * PI / 6))).thenReturn(0.8660254037844384);
+        when(cos.calculate(Mockito.eq(PI))).thenReturn(-1.0);
+        when(cos.calculate(Mockito.eq(2 * PI))).thenReturn(1.0);
+        when(cos.calculate(Mockito.eq(1 * PI / 2))).thenReturn(0.0);
+        when(cos.calculate(Mockito.eq(-1 * PI / 2))).thenReturn(0.0);
+        when(cos.calculate(Mockito.eq(-1 * PI / 4))).thenReturn(0.7071067811865476);
+        when(cos.calculate(Mockito.eq(-3 * PI / 4))).thenReturn(-0.7071067811865475);
+        when(cos.calculate(Mockito.eq(-PI))).thenReturn(-1.0);
+        when(cos.calculate(Mockito.eq(-5 * PI / 4))).thenReturn(-0.7071067811865477);
+        when(cos.calculate(Mockito.eq(-7 * PI / 4))).thenReturn(0.7071067811865474);
+
+        when(cos.calculate(Double.POSITIVE_INFINITY)).thenReturn(NaN);
+        when(cos.calculate(Double.NEGATIVE_INFINITY)).thenReturn(NaN);
+        when(cos.calculate(NaN)).thenReturn(NaN);
+
+        return cos;
+    }
+
+    public static TanCalculator getTanMock() {
+        TanCalculator tan = mock(TanCalculator.class);
+
+        when(tan.calculate(Mockito.eq(PI / 2))).thenReturn(Double.POSITIVE_INFINITY);
+        when(tan.calculate(Mockito.eq(- PI / 2))).thenReturn(Double.POSITIVE_INFINITY);
+        when(tan.calculate(Mockito.eq(PI))).thenReturn(0.0);
+        when(tan.calculate(Mockito.eq(2 * PI))).thenReturn(0.0);
+        when(tan.calculate(Mockito.eq(-PI))).thenReturn(0.0);
+
+        when(tan.calculate(Mockito.eq(1 * PI / 6))).thenReturn(0.5773502691896257);
+        when(tan.calculate(Mockito.eq(1 * PI / 4))).thenReturn(0.9999999999999999);
+        when(tan.calculate(Mockito.eq(1 * PI / 3))).thenReturn(1.7320508075688767);
+        when(tan.calculate(Mockito.eq(2 * PI / 3))).thenReturn(-1.7320508075688783);
+        when(tan.calculate(Mockito.eq(3 * PI / 4))).thenReturn(-1.0000000000000002);
+        when(tan.calculate(Mockito.eq(5 * PI / 6))).thenReturn(-0.5773502691896257);
+        when(tan.calculate(Mockito.eq(7 * PI / 6))).thenReturn(0.5773502691896254);
+        when(tan.calculate(Mockito.eq(5 * PI / 4))).thenReturn(0.9999999999999997);
+        when(tan.calculate(Mockito.eq(4 * PI / 3))).thenReturn(1.7320508075688754);
+        when(tan.calculate(Mockito.eq(5 * PI / 3))).thenReturn(-1.732050807568877);
+        when(tan.calculate(Mockito.eq(7 * PI / 4))).thenReturn(-1.0000000000000004);
+        when(tan.calculate(Mockito.eq(11 * PI / 6))).thenReturn(-0.5773502691896265);
+        when(tan.calculate(Mockito.eq(-1 * PI / 4))).thenReturn(-0.9999999999999999);
+        when(tan.calculate(Mockito.eq(-3 * PI / 4))).thenReturn(1.0000000000000002);
+        when(tan.calculate(Mockito.eq(-5 * PI / 4))).thenReturn(-0.9999999999999997);
+        when(tan.calculate(Mockito.eq(-7 * PI / 4))).thenReturn(1.0000000000000004);
+
+
+        when(tan.calculate(Double.POSITIVE_INFINITY)).thenReturn(NaN);
+        when(tan.calculate(Double.NEGATIVE_INFINITY)).thenReturn(NaN);
+        when(tan.calculate(NaN)).thenReturn(NaN);
+
+        return tan;
+    }
 }
