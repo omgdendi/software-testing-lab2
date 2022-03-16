@@ -106,4 +106,42 @@ public class TrigonomMock {
 
         return tan;
     }
+
+
+    public static SecCalculator getSecMock() {
+        SecCalculator sec = mock(SecCalculator.class);
+
+        when(sec.calculate(Mockito.eq(0.0))).thenReturn(1.0);
+        when(sec.calculate(Mockito.eq(-PI))).thenReturn(-1.0);
+        when(sec.calculate(Mockito.eq(- PI / 2))).thenReturn(Double.POSITIVE_INFINITY);
+        when(sec.calculate(Mockito.eq(PI / 2))).thenReturn(Double.POSITIVE_INFINITY);
+        when(sec.calculate(Mockito.eq(PI))).thenReturn(-1.0);
+        when(sec.calculate(Mockito.eq(2 * PI))).thenReturn(1.0);
+
+
+        when(sec.calculate(Mockito.eq(1 * PI / 6))).thenReturn(1.1547005383792515);
+        when(sec.calculate(Mockito.eq(1 * PI / 4))).thenReturn(1.414213562373095);
+        when(sec.calculate(Mockito.eq(1 * PI / 3))).thenReturn(1.9999999999999996);
+        when(sec.calculate(Mockito.eq(2 * PI / 3))).thenReturn(-2.000000000000001);
+        when(sec.calculate(Mockito.eq(3 * PI / 4))).thenReturn(-1.4142135623730951);
+        when(sec.calculate(Mockito.eq(5 * PI / 6))).thenReturn(-1.1547005383792515);
+        when(sec.calculate(Mockito.eq(7 * PI / 6))).thenReturn(-1.1547005383792512);
+        when(sec.calculate(Mockito.eq(5 * PI / 4))).thenReturn(-1.4142135623730947);
+        when(sec.calculate(Mockito.eq(4 * PI / 3))).thenReturn(-1.9999999999999982);
+        when(sec.calculate(Mockito.eq(5 * PI / 3))).thenReturn(2.0);
+        when(sec.calculate(Mockito.eq(7 * PI / 4))).thenReturn(1.4142135623730951);
+        when(sec.calculate(Mockito.eq(11 * PI / 6))).thenReturn(1.154700538379252);
+        when(sec.calculate(Mockito.eq(-1 * PI / 4))).thenReturn(1.414213562373095);
+        when(sec.calculate(Mockito.eq(-3 * PI / 4))).thenReturn(-1.4142135623730951);
+        when(sec.calculate(Mockito.eq(-5 * PI / 4))).thenReturn(-1.4142135623730947);
+        when(sec.calculate(Mockito.eq(-7 * PI / 4))).thenReturn(1.4142135623730951);
+
+
+        when(sec.calculate(Double.POSITIVE_INFINITY)).thenReturn(NaN);
+        when(sec.calculate(Double.NEGATIVE_INFINITY)).thenReturn(NaN);
+        when(sec.calculate(NaN)).thenReturn(NaN);
+
+        return sec;
+    }
+
 }
